@@ -1,0 +1,16 @@
+<h1>Login TiendaApp</h1>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div>
+   <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Ingrese correo" %>
+   <%= f.password_field :password, autocomplete: "current-password", placeholder: "Ingrese contraseña" %>
+ 
+
+       <%= f.submit "Ingresar", class: "regis-button" %> 
+             <p>¿No tienes una cuenta?</p>
+        <%= link_to "Registrate", new_user_registration_path %>
+
+</div>  
+
+       <% end %>
+    

@@ -1,0 +1,32 @@
+<body class="">
+  <h1>Registrate en TiendaApp</h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource, placeholder: "" %>
+
+  <div>
+    <%= f.email_field :email, placeholder: "Ingrese correo" %>
+
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirmar contraseña" %>
+  
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Ingresar nueva contraseña" %>
+    
+    <%= f.text_field :name, autocomplete: "name", placeholder: "Ingresar nombre"%>
+
+    <%= f.text_field :lastname, autocomplete: "lastname", placeholder: "Ingresar apellido"%>
+
+    <%= f.text_field :document, autocomplete: "document", placeholder: "Ingresar n° DNI"%>
+
+    <%= f.date_field :born, autocomplete: "field", placeholder: "Ingresar fecha de nacimiento"%>
+
+    <%= f.text_field :phone, autocomplete: "phone", placeholder: "Ingresar n° de telefono"%>
+
+    <%= f.select :sex, ["Masculino", "Femenino" ] %> 
+
+      <%= f.submit "Registrar", class: "regis-button" %> 
+      <p>¿Ya tienes una cuenta?</p>
+      <%= link_to "Ingresar", new_user_session_path %>
+
+  </div>
+  <% end %>
+</body>

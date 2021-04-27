@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TiendaApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+      <% if current_user == false %>
+       <%= stylesheet_link_tag 'auth', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <% end %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>  
+  
+
+  <% if user_signed_in? %>
+     <p> <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></p>
+  <% end %>
+    <% if user_signed_in? == false %>
+       <%= link_to "Ingresar", new_user_session_path %>
+  <% end %>
+
+      
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    <%= yield %>
+
+  </body>
+</html>
