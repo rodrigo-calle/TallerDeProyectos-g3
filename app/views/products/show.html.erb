@@ -65,5 +65,17 @@
   <%= @product.material %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<p>
+<% if @product.product_img.attached? %>
+  <strong>Imagen:</strong>
+  <%= @product.product_img %>
+        <% else %>
+        <script>
+          alert("no se pudo la imagen")
+        </script>
+   <% end %>
+</p>
+
+
+<%= link_to 'Editar', edit_product_path(@product) %> |
+<%= link_to 'Lista de productos', products_path %>

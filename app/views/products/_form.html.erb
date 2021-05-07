@@ -41,16 +41,11 @@
     <%= form.text_field :material,  placeholder: 'Ingrese material' %>
 
 
-   <% if product.product_img.attached? %>
-      <%= image_tag product.product_img, style: "width: 200px; display: block" %>  
+    <% if product.product_img.attached? %>
+        <%= image_tag product.product_img, style: "width: 200px; display: block; text-align: center;" %>  
     <% end %>
-
-    <%= form.label :Imagen %> <br>
-    <%= form.file_field :product_img %> 
-
- 
-    
-  
+    <%= form.file_field :product_img %>  
+      
     <%= form.submit 'Registrar producto', class: "regis-button"%>
 </div>
 

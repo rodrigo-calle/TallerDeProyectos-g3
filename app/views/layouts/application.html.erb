@@ -14,7 +14,7 @@
   </head>
 
   <body>  
-  
+  <p><%= link_to 'Menú principal', root_path%></p>
 
   <% if user_signed_in? %>
      <p> <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete %></p>
