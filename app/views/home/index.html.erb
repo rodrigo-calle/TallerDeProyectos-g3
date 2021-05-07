@@ -1,6 +1,12 @@
-<h1>Home#index</h1>
+<h1>TIENDA APP</h1>
 <p>Find me in app/views/home/index.html.erb</p>
-
+<% if user_signed_in?%>
+<%= link_to "Registro de producto", new_product_path %> <br>
+<%= link_to "Lista de productos", products_path %>
+<% else %>
 <%= link_to "Login", new_user_session_path %>  <br>
 <%= link_to "Registro de usuario", new_user_registration_path %> <br>
-<%= link_to "Registro de producto", new_product_path %>
+<%= link_to "Registro de producto", new_product_path %> <br>
+<%= link_to "Lista de productos", products_path %>
+
+<% end %>
