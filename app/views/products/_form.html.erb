@@ -31,7 +31,7 @@
     <%= form.text_area :characteristic,  placeholder: 'Ingrese característica', class: "text-area" %>
 
     <%= form.text_field :unit, placeholder: 'Ingrese unidad de medida' %>
-
+    <p class="label">Color</p>
     <%= form.color_field :color, placeholder: 'Elija color'  %>
 
     <%= form.text_field :supplier,  placeholder: 'Ingrese proveedor' %>
@@ -41,6 +41,15 @@
     <%= form.text_field :material,  placeholder: 'Ingrese material' %>
 
 
+   <% if product.product_img.attached? %>
+      <%= image_tag product.product_img, style: "width: 200px; display: block" %>  
+    <% end %>
+
+    <%= form.label :Imagen %> <br>
+    <%= form.file_field :product_img %> 
+
+ 
+    
   
     <%= form.submit 'Registrar producto', class: "regis-button"%>
 </div>

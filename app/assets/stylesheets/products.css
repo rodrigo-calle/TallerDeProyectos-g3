@@ -1,1 +1,4 @@
- 
+table * {
+    border: solid #222;
+    background-color: aliceblue;
+}
