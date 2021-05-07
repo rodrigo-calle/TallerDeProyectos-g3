@@ -1,0 +1,48 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+
+  <% end %>
+<div>
+
+
+  
+    <%= form.text_field :category, placeholder: 'Ingrese categoria' %>
+
+    <%= form.text_field :subcategory,  placeholder: 'Ingrese subcategoria' %>
+
+    <%= form.text_field :brand,  placeholder: 'Ingrese marca' %>
+
+    <%= form.text_field :model,  placeholder: 'Ingrese modelo'%>
+
+    <%= form.text_field :condition,  placeholder: 'Ingrese condición' %>
+
+    <%= form.text_area :description,  placeholder: 'Ingrese descripción', class: "text-area" %>
+
+    <%= form.text_field :price,  placeholder: 'Ingrese precio'%>
+
+    <%= form.text_area :characteristic,  placeholder: 'Ingrese característica', class: "text-area" %>
+
+    <%= form.text_field :unit, placeholder: 'Ingrese unidad de medida' %>
+
+    <%= form.color_field :color, placeholder: 'Elija color'  %>
+
+    <%= form.text_field :supplier,  placeholder: 'Ingrese proveedor' %>
+
+    <%= form.number_field :stock,  placeholder: 'Ingrese stock' %>
+
+    <%= form.text_field :material,  placeholder: 'Ingrese material' %>
+
+
+  
+    <%= form.submit 'Registrar producto', class: "regis-button"%>
+</div>
+
+<% end %>
